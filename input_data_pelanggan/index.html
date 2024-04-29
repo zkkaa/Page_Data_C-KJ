@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- ----------Link-CSS---------- -->
+
+
+    <!-- ----------Link-ICON---------- -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+
+    <style>
+        
+        /* ukuran lebar layar laptop => 1552px */
+
+        /* --------Link-FONT-------- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+        :root {
+            /* ------COLOR------ */
+            --bg: #FEFBFB;
+            --bg-cont: #ffffff;
+            --txt1 : #5E95FE;
+            --block-actv : #61E16E;
+            --blck : black;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+        }
+
+        /* ==========Css_Sidebar========== */
+
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 150px;
+            padding: 10px 14px;
+            background-color: var(--bg-cont);
+            overflow: hidden;
+            box-shadow: 0 0 10px grey;
+        }
+
+        nav .logo-apk {
+            display: flex;
+            padding: 5px;
+            border-bottom: 1px solid black;
+        }
+
+        nav .logo-image {
+            /* display: flex; */
+            justify-content: center;
+            
+        }
+
+        nav .logo-image img {
+            width: 65px;
+            margin-left: -4px;
+        }
+
+        nav .nama-apk {
+            /* display: flex; */
+            text-align: center;
+            margin-top: 17px;
+            color: var(--txt1);
+        }
+
+        nav  .menu-items {
+            /* padding: 5px; */
+            height: 85%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-items li {
+            list-style: none;
+        }
+
+        nav .menu-items li .active {
+            background-color: var(--block-actv);
+            font-weight: 500;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px grey;
+            color: #000000;
+        }
+
+
+        .menu-items li a {
+            display: block;
+            align-items: center;
+            margin-top: .5rem;
+            height: 80px;
+            border-radius: 15px;
+            color: grey;
+            text-decoration: none
+        }
+
+        nav .menu-items li a:hover{
+            background-color: var(--block-actv);
+            box-shadow: 0 5px 10px grey;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        .menu-items li a i{
+            font-size: 24px;
+            padding-top: 15px;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blck);
+        }
+
+        .menu-items li a .ket{
+            display: list-item;
+            text-align: center;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.700);
+        }
+
+        /* ==========Css_Navbar========== */
+
+        .navigasi {
+            position: fixed;
+            top: 0;
+            left: 150px;
+            height: 85px;
+            width: calc(100% - 150px);
+            background-color: var(--bg-cont);
+            /* overflow: hidden; */
+            box-shadow: 10px 0 10px grey;
+            display: flexbox;
+            z-index: 999;
+        }
+
+        .navigasi div {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .navigasi div .tanggal {
+            align-items: center; 
+        }
+
+        .navigasi div .tanggal a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .navigasi div .tanggal a span {
+            font-size: 20px;
+        }
+
+        .navigasi div .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .navigasi div .user div {
+            justify-content: center;
+            padding-right: 5px;
+        }
+
+        .navigasi div .user div i {
+            font-size: 35px;
+            margin-bottom: 2px;
+        }
+
+        .navigasi div .user span {
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        /* ==========Css_Cont_hal-data_barang========== */
+
+        .tbl_data_pelanggan {
+            position: relative;
+            margin: 105px 250px 10px 400px;
+            width: calc(100% - 650px);
+            /* width: 1362px; */
+            height: 83vh;
+            border-radius: 20px;
+            border: 1px solid black;
+            align-content: center;
+        }
+
+        .tbl_data_pelanggan .tambah_data_pelanggan {
+            width: 90%;
+            /* width: 1362px; */
+            height: 90%;
+            margin-left: 5%;
+        }
+
+        .tambah_data_pelanggan .div_ttp {
+            display: flex;
+            height: 8vh;
+        }
+        
+        .tambah_data_pelanggan .ttp {
+            font-size: 22px;
+            font-weight: 500;
+        }
+        
+        .tambah_data_pelanggan .kolom_input_p {
+            display: flex;
+            border-top: 1px solid black;
+        }
+
+        .tambah_data_pelanggan .span_input_p {
+            font-size: 18px;
+            color: #000000;
+        }
+        
+        .tambah_data_pelanggan .input_Bnama_p,
+        .tambah_data_pelanggan .input_Bnomer_p {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            padding-left: 5px;
+            color: #000000;
+            font-size: 16px;
+            margin-top: 3px;
+        }
+
+        .span_eror {
+            font-size: 12px;
+            color: red;
+        }
+
+        .tambah_data_pelanggan .div_kp {
+            display: flexbox;
+            width: 50vh;
+            height: 10vh;
+            margin-top: 2vh;
+        }
+
+        .tambah_data_pelanggan .div_np {
+            display: flexbox;
+            width: 45vh;
+            height: 10vh;
+            margin-left: 10vh;
+            margin-top: 2vh;
+        }
+
+        .tambah_data_pelanggan .kolom_alamat {
+            width: 100%;
+            height: 26vh;
+            margin-top: 3vh;
+        }
+
+        .kolom_alamat .input_alamat {
+            height: 14vh;
+            width: 100%;
+            margin-top: 3px;
+        }
+
+        .kolom_alamat .input_alamat textarea{
+            border: 1px solid black;
+            font-size: 16px;
+            padding-left: 5px;
+            width: 100%;
+        }
+
+        .tambah_data_pelanggan .div_btn-tambah_p {
+            display: flex;
+            width: 100%;
+            height: 6vh;
+            justify-content: end;
+        }
+
+        .div_btn-tambah_p .btn_p {
+            text-decoration: none;
+            background-color: rgba(68, 212, 83, 1);
+            line-height: 6vh;
+            width: 45px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .div_btn-tambah_p .btn_p span {
+            font-size: 50px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        /* btn-simpan */
+        .tambah_data_pelanggan .btn_simpan-pelanggan{
+            display: flex;
+            height: 7vh;
+            width: 100%;
+        }
+
+        .tambah_data_pelanggan .simpan-pelanggan {
+            width: 100%;
+            /* height: 5vh; */
+            margin-top: 2vh;
+            border-radius: 30px;
+            border: 1px solid black;
+        }
+
+    </style>    
+</head>
+
+
+<body>
+    
+
+    <!-- ==========Sidebar========== -->
+    
+    <nav>
+        <div class="logo-apk">
+            <div class="logo-image">
+                <img src="img/logo-apk.png" alt="">
+            </div>
+            <span class="nama-apk">C - Kj</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li>
+                    <a href="">
+                        <i class="ph ph-house"></i>
+                        <span class="ket">Beranda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="active">
+                        <i class="ph ph-folder-simple-plus"></i>
+                        <span class="ket">Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="ph ph-currency-circle-dollar"></i>
+                        <span class="ket">Transaksi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="ph ph-file"></i>
+                        <span class="ket">Rekap</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="keluar" >
+                <li>
+                    <a href="#">
+                        <i class="ph ph-sign-out"></i>
+                        <span class="ket">keluar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <!-- ==========Navbar========== -->
+
+    <nav class="navigasi">
+        <div>
+            <div class="tanggal">
+                <a href="">
+                    <span>ini adalah tanggal</span>
+                </a>
+            </div>
+            <div class="user">
+                <div>
+                    <i class="ph ph-user-circle"></i>
+                </div>
+                <span>Dr. Raffi Fabiansyah</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========Cont_hal-data_barang========== -->
+
+    <div class="tbl_data_pelanggan">
+        <div class="tambah_data_pelanggan">
+            <div class="div_ttp">
+                <span class="ttp">Tabel Tambah Pelanggan</span>
+            </div>
+            <div class="kolom_input_p">
+                <div class="div_kp">
+                    <span class="span_input_p">Nama</span>
+                    <div>
+                        <input type="text" class="input_Bnama_p">
+                    </div>
+                    <span class="span_eror">Data belum terisi!</span>
+                </div>
+                <div class="div_np">
+                    <span class="span_input_p">Nomer Telepon</span>
+                    <div>
+                        <input type="text" class="input_Bnomer_p">
+                    </div>
+                    <span class="span_eror">Data belum terisi!</span>
+                </div>
+            </div>
+            <div class="kolom_alamat">
+                <div>
+                    <span class="span_input_p">Alamat</span>
+                </div>
+                <div class="input_alamat">
+                    <textarea name="" id="" rows="4"></textarea>
+                </div>
+                <span class="span_eror">Data belum terisi!</span>
+            </div>
+            <div class="div_btn-tambah_p">
+                <a href="" class="btn_p">
+                    <span>+</span>
+                </a>
+            </div>
+            <div class="btn_simpan-pelanggan">
+                <button class="simpan-pelanggan">
+                    Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
